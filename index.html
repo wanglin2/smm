@@ -4,875 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>思绪思维导图 - 隐私优先的强大思维导图工具</title>
-    <meta name="description" content="思绪思维导图是一款隐私优先的强大思维导图工具。" />
-    <meta name="keywords" content="思维导图, Obsidian思维导图，SimpleMindMap, mind-map, simple mind map, 隐私优先, 强大工具, 思绪, 笔记, 项目管理" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background: #f8fafc;
-        font-family:
-          "Segoe UI",
-          system-ui,
-          -apple-system,
-          "PingFang SC",
-          "Microsoft YaHei",
-          sans-serif;
-        min-height: 100vh;
-        color: #334155;
-        line-height: 1.6;
-        overflow-x: hidden;
-        background:
-          radial-gradient(
-            circle at 20% 25%,
-            rgba(226, 232, 240, 0.35) 0%,
-            transparent 45%
-          ),
-          linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      /* 导航栏 - 修改为 fixed 固定定位并铺满宽度 */
-      nav {
-        width: 100%;
-        position: fixed; /* 固定在页面顶部 */
-        top: 0;
-        left: 0;
-        background: rgba(248, 250, 252, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        z-index: 1000;
-      }
-
-      nav.sticky {
-        border-bottom: 1px solid rgba(203, 213, 225, 0.3);
-        box-shadow: 0 4px 20px -10px rgba(0, 0, 0, 0.1); /* 增加一点悬浮阴影 */
-      }
-
-      /* 导航栏内部容器，限制宽度并居中 */
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1.2rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      /* 占位符，防止 fixed 导航栏遮挡内容 */
-      .nav-placeholder {
-        height: 72px; /* 与导航栏高度保持一致 */
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #0f172a;
-        text-decoration: none;
-      }
-
-      .logo-icon {
-        font-size: 1.8rem;
-        background: #fef3c7;
-        border-radius: 0.8rem;
-        padding: 0.2rem;
-        transition: transform 0.3s ease;
-      }
-
-      .logo:hover .logo-icon {
-        transform: rotate(-10deg) scale(1.1);
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: #475569;
-        font-weight: 500;
-        font-size: 0.95rem;
-        position: relative;
-        transition: color 0.2s;
-      }
-
-      .nav-links a:not(.nav-cta)::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background: #0f172a;
-        transition: width 0.3s ease;
-      }
-
-      .nav-links a:not(.nav-cta):hover::after {
-        width: 100%;
-      }
-
-      .nav-links a:hover {
-        color: #0f172a;
-      }
-
-      .nav-cta {
-        background: #0f172a;
-        color: white !important;
-        padding: 0.6rem 1.4rem;
-        border-radius: 2rem;
-        box-shadow: 0 10px 18px -8px rgba(15, 23, 42, 0.3);
-        transition: all 0.2s;
-      }
-
-      .nav-cta:hover {
-        background: #1e293b;
-        transform: translateY(-2px);
-        box-shadow: 0 14px 22px -8px rgba(15, 23, 42, 0.4);
-      }
-
-      /* 首屏 Hero 区域 */
-      .hero {
-        text-align: center;
-        padding: 4rem 0 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .hero-badges {
-        display: flex;
-        gap: 0.8rem;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-      }
-
-      .badge {
-        background: #f1f5f9;
-        color: #334155;
-        padding: 0.4rem 1.2rem;
-        border-radius: 2rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        animation: fadeInDown 0.8s ease-out;
-      }
-
-      .ai-badge {
-        background: #ede9fe;
-        color: #6b21a8;
-        font-weight: 600;
-      }
-      .privacy-badge {
-        background: #dcfce7;
-        color: #166534;
-        font-weight: 600;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: #0f172a;
-        letter-spacing: -1px;
-        line-height: 1.2;
-        max-width: 800px;
-        background: linear-gradient(135deg, #1e293b, #0f172a);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: fadeInUp 0.8s ease-out;
-      }
-
-      .hero-subtitle {
-        font-size: 1.25rem;
-        color: #64748b;
-        max-width: 600px;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        animation: fadeInUp 1.2s ease-out;
-      }
-
-      .btn {
-        border: none;
-        padding: 0.9rem 2rem;
-        border-radius: 2.5rem;
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        text-decoration: none;
-      }
-
-      .btn-primary {
-        background: #0f172a;
-        color: white;
-        box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.35);
-      }
-
-      .btn-primary:hover {
-        background: #1e293b;
-        transform: translateY(-3px);
-        box-shadow: 0 16px 30px -8px rgba(15, 23, 42, 0.45);
-        color: white;
-      }
-
-      .btn-outline {
-        background: white;
-        border: 1px solid #cbd5e1;
-        color: #1e293b;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-      }
-
-      .btn-outline:hover {
-        background: #f8fafc;
-        border-color: #94a3b8;
-        transform: translateY(-3px);
-      }
-
-      /* 3D 轮播图区域 */
-      .carousel-wrapper {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        padding: 3rem 0;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .carousel-stage {
-        position: relative;
-        height: 480px;
-        perspective: 1200px;
-      }
-
-      .carousel-item {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 700px;
-        max-width: 80%;
-        height: 100%;
-        border-radius: 1.5rem;
-        background: white;
-        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.2);
-        transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #94a3b8;
-        font-size: 1.2rem;
-        cursor: pointer;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        overflow: hidden;
-      }
-
-      .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .carousel-item.active {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-        z-index: 10;
-        filter: blur(0);
-      }
-
-      .carousel-item.prev {
-        transform: translateX(-110%) scale(0.8) rotateY(15deg);
-        opacity: 0.5;
-        z-index: 5;
-        filter: blur(2px);
-      }
-
-      .carousel-item.next {
-        transform: translateX(10%) scale(0.8) rotateY(-15deg);
-        opacity: 0.5;
-        z-index: 5;
-        filter: blur(2px);
-      }
-
-      .carousel-item.hide {
-        opacity: 0;
-        z-index: 1;
-        transform: translateX(-50%) scale(0.5);
-      }
-
-      .carousel-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: white;
-        border: 1px solid #cbd5e1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 20;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.2s;
-      }
-
-      .carousel-nav:hover {
-        background: #0f172a;
-        color: white;
-        border-color: #0f172a;
-      }
-
-      .carousel-nav.prev-btn {
-        left: 15%;
-      }
-      .carousel-nav.next-btn {
-        right: 15%;
-      }
-
-      /* 通用 Section 样式 */
-      section.content-section {
-        padding: 5rem 0;
-        position: relative;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .section-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #0f172a;
-        margin-bottom: 0.5rem;
-      }
-
-      .section-desc {
-        font-size: 1.1rem;
-        color: #64748b;
-      }
-
-      /* 平台下载卡片 */
-      .platforms-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .platform-card {
-        background: white;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        transition: all 0.3s;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .platform-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: #0f172a;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-      }
-
-      .platform-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-      }
-
-      .platform-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .platform-icon {
-        font-size: 2.5rem;
-        width: 60px;
-        height: 60px;
-        background: #f8fafc;
-        border-radius: 1.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s;
-      }
-
-      .platform-card:hover .platform-icon {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      .platform-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #0f172a;
-      }
-
-      .platform-desc {
-        font-size: 0.95rem;
-        color: #64748b;
-        flex-grow: 1;
-      }
-
-      .platform-price {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #3b82f6;
-        margin-top: 0.5rem;
-        padding-top: 1rem;
-        border-top: 1px solid #f1f5f9;
-        line-height: 1.5;
-      }
-
-      /* 多端展示 Tab 切换区 */
-      .showcase-section {
-        background: white;
-        border-radius: 2.5rem;
-        padding: 3rem;
-        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        position: relative;
-      }
-
-      .showcase-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 2.5rem;
-        flex-wrap: wrap;
-        position: relative;
-        border-bottom: 2px solid #f1f5f9;
-      }
-
-      .tab-btn {
-        padding: 0.8rem 1.8rem;
-        border-radius: 0.8rem 0.8rem 0 0;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        font-weight: 600;
-        color: #64748b;
-        transition: all 0.3s;
-        font-size: 1rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .tab-btn:hover {
-        color: #0f172a;
-      }
-      .tab-btn.active {
-        color: #0f172a;
-      }
-
-      .tab-indicator {
-        position: absolute;
-        bottom: -2px;
-        height: 3px;
-        background: #0f172a;
-        border-radius: 3px;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        z-index: 1;
-        display: none;
-      }
-
-      .showcase-wrapper {
-        position: relative;
-        transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        overflow: hidden;
-      }
-
-      .showcase-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.5s ease,
-          transform 0.5s ease;
-        pointer-events: none;
-      }
-
-      .showcase-content.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        position: relative;
-      }
-
-      .showcase-text h3 {
-        font-size: 1.8rem;
-        color: #0f172a;
-        margin-bottom: 1rem;
-      }
-
-      .showcase-text p {
-        color: #64748b;
-        margin-bottom: 1.5rem;
-        font-size: 1.05rem;
-      }
-
-      .showcase-img-placeholder {
-        background: #f1f5f9;
-        border-radius: 1.5rem;
-        height: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #94a3b8;
-        border: 1px solid #e2e8f0;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
-      }
-
-      .showcase-img-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      /* 功能特性网格 */
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .feature-card {
-        background: white;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        transition: all 0.3s;
-      }
-
-      .feature-card:hover {
-        background: #f8fafc;
-        border-color: #cbd5e1;
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.1);
-      }
-
-      .feature-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 1rem;
-        background: #0f172a;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin-bottom: 1.2rem;
-        transition: transform 0.3s;
-      }
-
-      .feature-card:hover .feature-icon {
-        transform: scale(1.1) rotate(-10deg);
-        background: #3b82f6;
-      }
-
-      .feature-card h3 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #0f172a;
-        margin-bottom: 0.5rem;
-      }
-
-      .feature-card p {
-        font-size: 0.95rem;
-        color: #64748b;
-      }
-
-      /* CTA 区域 */
-      .cta-section {
-        background: white;
-        border-radius: 2.2rem;
-        padding: 4rem 2rem;
-        text-align: center;
-        margin: 5rem 0;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .cta-section h2 {
-        font-size: 2.5rem;
-        color: #0f172a;
-      }
-
-      .cta-section p {
-        font-size: 1.1rem;
-        color: #64748b;
-        max-width: 600px;
-      }
-
-      /* 关注与联系区域 */
-      .contact-section {
-        background: white;
-        border-radius: 2.2rem;
-        padding: 4rem 3rem;
-        margin-bottom: 3rem;
-        border: 1px solid rgba(203, 213, 225, 0.5);
-        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .contact-info h2 {
-        font-size: 2rem;
-        color: #0f172a;
-        margin-bottom: 1rem;
-      }
-
-      .contact-info p {
-        color: #64748b;
-        margin-bottom: 2rem;
-        font-size: 1.05rem;
-      }
-
-      .contact-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        padding: 1.2rem 1.5rem;
-        background: #f8fafc;
-        border-radius: 1rem;
-        border: 1px solid #e2e8f0;
-        transition: all 0.3s;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .contact-item:hover {
-        background: white;
-        border-color: #cbd5e1;
-        transform: translateX(5px);
-        box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
-      }
-
-      .contact-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 0.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        flex-shrink: 0;
-      }
-
-      .icon-email {
-        background: #fef3c7;
-        color: #92400e;
-      }
-      .icon-github {
-        background: #f1f5f9;
-        color: #0f172a;
-      }
-
-      .contact-text strong {
-        display: block;
-        font-size: 1rem;
-        color: #0f172a;
-        margin-bottom: 0.2rem;
-      }
-
-      .contact-text span {
-        font-size: 0.95rem;
-        color: #64748b;
-      }
-
-      .qr-codes {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-      }
-
-      .qr-card {
-        text-align: center;
-        background: #f8fafc;
-        padding: 1.5rem;
-        border-radius: 1.5rem;
-        border: 1px solid #e2e8f0;
-        transition: all 0.3s;
-      }
-
-      .qr-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-        background: white;
-      }
-
-      .qr-img-placeholder {
-        width: 140px;
-        height: 140px;
-        background: white;
-        border-radius: 0.8rem;
-        margin: 0 auto 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #94a3b8;
-        font-size: 0.85rem;
-        border: 1px dashed #cbd5e1;
-      }
-
-      .qr-card p {
-        font-weight: 600;
-        color: #334155;
-        font-size: 0.95rem;
-      }
-
-      .qr-card small {
-        color: #94a3b8;
-        font-size: 0.8rem;
-      }
-
-      footer {
-        text-align: center;
-        padding: 3rem 0;
-        color: #94a3b8;
-        font-size: 0.9rem;
-        border-top: 1px solid rgba(203, 213, 225, 0.3);
-      }
-
-      /* 动画定义 */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
-
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* 响应式适配 */
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2.2rem;
-        }
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-        .nav-links a:not(.nav-cta) {
-          display: none;
-        }
-        .nav-container {
-          padding: 1rem 1.5rem;
-        }
-        .nav-placeholder {
-          height: 64px;
-        }
-        .carousel-stage {
-          height: 300px;
-        }
-        .showcase-content.active {
-          grid-template-columns: 1fr;
-        }
-        .showcase-section {
-          padding: 1.5rem;
-        }
-        .carousel-nav.prev-btn {
-          left: 5%;
-        }
-        .carousel-nav.next-btn {
-          right: 5%;
-        }
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-        .contact-section {
-          padding: 2rem 1.5rem;
-        }
-        .qr-codes {
-          flex-direction: column;
-          gap: 1rem;
-        }
-      }
-    </style>
+    <meta
+      name="description"
+      content="思绪思维导图是一款隐私优先的强大思维导图工具。"
+    />
+    <meta
+      name="keywords"
+      content="思维导图, Obsidian思维导图，SimpleMindMap, mind-map, simple mind map, 隐私优先, 强大工具, 思绪, 笔记, 项目管理"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- 顶部导航栏：移到 container 外部，铺满全宽并固定 -->
@@ -900,10 +40,11 @@
         <div class="hero-badges">
           <span class="badge privacy-badge">🔒 隐私优先 本地存储</span>
           <span class="badge ai-badge">✨ AI 智能加持</span>
+          <span class="badge client-badge">💻 多端呈现</span>
         </div>
         <h1>激发无限灵感，整理碎片思绪</h1>
         <p class="hero-subtitle">
-          一款强大且注重隐私的思维导图工具。支持多种平台、丰富结构与深度定制，让你的思维自由翱翔。
+          一款强大且注重隐私的思维导图工具。支持多种平台、高颜值、丰富功能与深度定制，让你的思维自由翱翔。
         </p>
         <div class="hero-actions">
           <a
@@ -952,7 +93,9 @@
         <div class="section-header reveal">
           <h2 class="section-title">选择你喜欢的平台</h2>
           <p class="section-desc">摒弃传统多端，站在巨人之上</p>
-          <p class="section-desc">大部分功能免费，少数专业版付费，打造最具性价比思维导图</p>
+          <p class="section-desc">
+            大部分功能免费，少数专业功能付费，打造最具性价比思维导图
+          </p>
         </div>
         <div class="platforms-grid">
           <a
@@ -1001,7 +144,7 @@
             <div class="platform-icon">🌐</div>
             <div class="platform-name">网页在线版</div>
             <div class="platform-desc">
-              打开浏览器即用，无需安装，方便快捷分享。
+              打开浏览器即用，无需安装，方便快捷。
             </div>
             <div class="platform-price">免费使用</div>
           </a>
@@ -1030,8 +173,8 @@
               <div class="showcase-text">
                 <h3>专业强大的桌面端</h3>
                 <p>
-                  专为深度用户设计的全功能版本。支持复杂的思维导图结构、海量节点无卡顿渲染、本地文件管理及历史版本回退。配合
-                  WebDAV 云同步，打造属于你的第二大脑。
+                  专为深度用户设计的全功能版本。完整思维导图编辑体验、本地文件管理及历史版本回退、个性化设置。配合
+                  AI 生成、图床上传、WebDAV 云同步，打造属于你的第二大脑。
                 </p>
                 <a
                   href="https://github.com/wanglin2/mind-map/releases"
@@ -1049,7 +192,7 @@
               <div class="showcase-text">
                 <h3>融入双链笔记的生态</h3>
                 <p>
-                  将思维导图无缝嵌入你的 Obsidian
+                  完美适配Obsidian，将思维导图无缝嵌入你的 Obsidian
                   笔记库中。支持节点双向链接，让你的导图不再是孤岛，而是知识网络的一部分。
                 </p>
                 <a
@@ -1069,7 +212,7 @@
                 <h3>随叫随到的效率工具</h3>
                 <p>
                   通过 UTools
-                  呼出，随时记录灵感。支持快速搜索、粘贴创建节点，是碎片化信息收集与整理的利器。
+                  呼出，轻量开启，随时记录灵感，是碎片化信息收集与整理的利器。
                 </p>
                 <a
                   href="https://www.u-tools.cn/plugins/detail/%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
@@ -1087,7 +230,7 @@
               <div class="showcase-text">
                 <h3>开箱即用的网页版</h3>
                 <p>
-                  无需安装任何软件，打开浏览器即可体验完整的思维导图功能。方便临时使用和分享给非用户查看。
+                  无需安装任何软件，打开浏览器即可体验编辑思维导图。方便临时使用和分享。
                 </p>
                 <a
                   href="https://wanglin2.github.io/mind-map/#/"
@@ -1238,7 +381,7 @@
                 class="qr-img-placeholder"
                 src="./assets/xhs.jpg"
                 alt="小红书二维码"
-                style="padding: 8px;"
+                style="padding: 8px"
               />
               <p>小红书</p>
               <small>欢迎进群交流</small>
@@ -1255,185 +398,84 @@
           </div>
         </div>
       </section>
-
-      <footer>
-        © 2026 思绪思维导图. All rights reserved. | 数据安全，源于本地。
-      </footer>
     </div>
 
-    <script>
-      // 1. 平滑滚动 (针对 fixed 导航栏调整了偏移量)
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
+    <!-- 新增链接板块 -->
+    <div class="footer-links">
+      <div class="links-grid">
+        <div class="link-group">
+          <h5>产品下载</h5>
+          <a
+            href="https://github.com/wanglin2/mind-map/releases"
+            target="_blank"
+            class="footer-link"
+            >桌面客户端</a
+          >
+          <a
+            href="https://github.com/wanglin2/obsidian-simplemindmap"
+            target="_blank"
+            class="footer-link"
+            >Obsidian 插件</a
+          >
+          <a
+            href="https://www.u-tools.cn/plugins/detail/%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"
+            target="_blank"
+            class="footer-link"
+            >UTools 插件</a
+          >
+          <a
+            href="https://wanglin2.github.io/mind-map/#/"
+            target="_blank"
+            class="footer-link"
+            >网页在线版</a
+          >
+        </div>
 
-          const target = document.querySelector(targetId);
-          if (target) {
-            const offset = 80; // 导航栏的高度预留
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = target.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
+        <div class="link-group">
+          <h5>问题反馈</h5>
+          <a
+            href="https://github.com/wanglin2/mind-map-client-issues/issues"
+            target="_blank"
+            class="footer-link"
+            >问题反馈（客户端）</a
+          >
+          <a
+            href="https://github.com/wanglin2/obsidian-simplemindmap/issues"
+            target="_blank"
+            class="footer-link"
+            >问题反馈（Obsidian插件）</a
+          >
+        </div>
 
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
+        <div class="link-group">
+          <h5>开源项目</h5>
+          <a
+            href="https://github.com/wanglin2/mind-map"
+            target="_blank"
+            class="footer-link"
+            >simple-mind-map</a
+          >
+          <a
+            href="https://wanglin2.github.io/mind-map-docs/"
+            target="_blank"
+            class="footer-link"
+            >开发者文档</a
+          >
+        </div>
 
-      window.addEventListener("scroll", () => {
-        const el = document.querySelector("nav");
-        if (window.scrollY <= 0) {
-          el.classList.remove("sticky");
-        } else {
-          el.classList.add("sticky");
-        }
-      });
+        <div class="link-group">
+          <h5>关注我们</h5>
+          <a href="mailto:1013335014@qq.com" class="footer-link">邮箱联系</a>
+          <a href="https://xhslink.com/m/3FZLxKuEakz" target="_blank" class="footer-link">小红书</a>
+          <a href="https://github.com/wanglin2" target="_blank" class="footer-link">Github主页</a>
+        </div>
+      </div>
+    </div>
 
-      // 2. 3D 轮播图逻辑
-      const items = Array.from(document.querySelectorAll(".carousel-item"));
-      let currentIndex = 0;
+    <footer>
+      © 2026 思绪思维导图. All rights reserved. | 数据安全，源于本地。
+    </footer>
 
-      function updateCarousel() {
-        items.forEach((item, index) => {
-          item.classList.remove("active", "prev", "next", "hide");
-
-          if (index === currentIndex) {
-            item.classList.add("active");
-          } else if (index === (currentIndex + 1) % items.length) {
-            item.classList.add("next");
-          } else if (
-            index ===
-            (currentIndex - 1 + items.length) % items.length
-          ) {
-            item.classList.add("prev");
-          } else {
-            item.classList.add("hide");
-          }
-        });
-      }
-
-      document.querySelector(".next-btn").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-      });
-
-      document.querySelector(".prev-btn").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateCarousel();
-      });
-
-      items.forEach((item, index) => {
-        item.addEventListener("click", () => {
-          if (
-            item.classList.contains("next") ||
-            item.classList.contains("prev")
-          ) {
-            currentIndex = index;
-            updateCarousel();
-          }
-        });
-      });
-
-      let autoPlay = setInterval(() => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-      }, 5000);
-
-      document
-        .querySelector(".carousel-stage")
-        .addEventListener("mouseenter", () => {
-          clearInterval(autoPlay);
-        });
-
-      document
-        .querySelector(".carousel-stage")
-        .addEventListener("mouseleave", () => {
-          autoPlay = setInterval(() => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-          }, 5000);
-        });
-
-      // 3. 多端展示 Tab 切换逻辑 (带高度过渡和指示器动画)
-      const tabBtns = document.querySelectorAll(".tab-btn");
-      const tabContents = document.querySelectorAll(".showcase-content");
-      const tabIndicator = document.querySelector(".tab-indicator");
-      const showcaseWrapper = document.querySelector(".showcase-wrapper");
-
-      function moveIndicator(element) {
-        if (!element) return;
-        tabIndicator.style.display = "block";
-        tabIndicator.style.left = element.offsetLeft + "px";
-        tabIndicator.style.width = element.offsetWidth + "px";
-      }
-
-      function setWrapperHeight(element) {
-        if (!element) return;
-        const height = element.offsetHeight;
-        showcaseWrapper.style.height = height + "px";
-      }
-
-      setTimeout(() => {
-        const activeBtn = document.querySelector(".tab-btn.active");
-        const activeContent = document.querySelector(
-          ".showcase-content.active",
-        );
-        moveIndicator(activeBtn);
-        setWrapperHeight(activeContent);
-      }, 100);
-
-      window.addEventListener("resize", () => {
-        const activeBtn = document.querySelector(".tab-btn.active");
-        const activeContent = document.querySelector(
-          ".showcase-content.active",
-        );
-        moveIndicator(activeBtn);
-        setWrapperHeight(activeContent);
-      });
-
-      tabBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const tabId = btn.getAttribute("data-tab");
-          const targetContent = document.getElementById(tabId);
-
-          if (btn.classList.contains("active")) return;
-
-          tabBtns.forEach((b) => b.classList.remove("active"));
-          tabContents.forEach((c) => c.classList.remove("active"));
-
-          btn.classList.add("active");
-          targetContent.classList.add("active");
-
-          moveIndicator(btn);
-          setWrapperHeight(targetContent);
-        });
-      });
-
-      // 4. 滚动显现动画
-      const reveals = document.querySelectorAll(".reveal");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-        },
-      );
-
-      reveals.forEach((reveal) => {
-        observer.observe(reveal);
-      });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
