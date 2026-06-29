@@ -449,16 +449,6 @@ section.content-section {
   flex-grow: 1;
 }
 
-.platform-price {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #3b82f6;
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #f1f5f9;
-  line-height: 1.5;
-}
-
 /* 多端展示 Tab 切换区 */
 .showcase-section {
   background: white;
@@ -937,5 +927,74 @@ footer {
   .links-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+
+/* 平台卡片 - 元信息与下载区改造 */
+.platform-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto; /* 将价格和版本号推至底部 */
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem; /* 增加底部间距 */
+}
+
+.platform-price {
+  font-weight: 600;
+  color: #3b82f6;
+  /* margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9; */
+  font-size: 0.95rem;
+  color: #3b82f6;
+  line-height: 1.5;
+}
+
+.platform-version {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.platform-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1 1 auto; /* 允许按钮自适应宽度并换行 */
+  min-width: 80px;
+  text-align: center;
+}
+
+.dl-btn:hover {
+  color: #ffffff;
+  background: #0f172a;
+  border-color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* 移动端适配优化 */
+@media (max-width: 768px) {
+  .platform-downloads {
+    flex-direction: column;
+  }
+  .dl-btn {
+    width: 100%;
   }
 }
