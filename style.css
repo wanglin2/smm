@@ -930,6 +930,114 @@ footer {
   }
 }
 
+/* 定价模块样式 */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.pricing-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  border-color: #cbd5e1;
+}
+
+.pricing-card.popular {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  background: #3b82f6;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  background: #f1f5f9;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.pricing-card:hover .pricing-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.pricing-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.pricing-price .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pricing-price .period {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.pricing-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.pricing-addon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: -0.5rem;
+}
+
+.addon-text {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
 /* 平台卡片 - 元信息与下载区改造 */
 .platform-meta {
   display: flex;
@@ -987,6 +1095,66 @@ footer {
   border-color: #0f172a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* 友情链接板块样式 */
+.friend-links {
+  background: #f8fafc;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(203, 213, 225, 0.3);
+}
+
+.friend-links .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.friend-links h4 {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.friend-links-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.friend-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: #475569;
+  transition: all 0.3s ease;
+}
+
+.friend-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px -8px rgba(15, 23, 42, 0.3);
+}
+
+.friend-icon {
+  display: flex;
+  align-items: center;
+}
+
+.friend-icon img {
+  height: 24px;
+}
+
+.friend-name {
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 /* 移动端适配优化 */
