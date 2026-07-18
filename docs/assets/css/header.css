@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #f8fafc;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  min-height: 100vh;
+  color: #334155;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(226, 232, 240, 0.35) 0%,
+      transparent 45%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  padding-bottom: 20px;
+}
+:root {
+  --primary-color: #2563eb;
+  --text-color: #1f2937;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
+}
+/* 导航栏 - 修改为 fixed 固定定位并铺满宽度 */
+nav {
+  width: 100%;
+  position: fixed; /* 固定在页面顶部 */
+  top: 0;
+  left: 0;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+nav.sticky {
+  border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+  box-shadow: 0 4px 20px -10px rgba(0, 0, 0, 0.1); /* 增加一点悬浮阴影 */
+}
+/* 导航栏内部容器，限制宽度并居中 */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 占位符，防止 fixed 导航栏遮挡内容 */
+.nav-placeholder {
+  height: 110px; /* 与导航栏高度保持一致 */
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+}
+.logo-icon {
+  font-size: 1.8rem;
+  background: #fef3c7;
+  border-radius: 0.8rem;
+  padding: 0.2rem;
+  transition: transform 0.3s ease;
+}
+.logo:hover .logo-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #0f172a;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+  color: #0f172a;
+}

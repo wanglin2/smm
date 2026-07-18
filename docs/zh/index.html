@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>思绪思维导图</title>
+    <!-- 引入 marked.js 用于解析 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- 引入 highlight.js 用于代码高亮（可选，但文档站点建议加上） -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/doc.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+  </head>
+  <body>
+    <!-- 顶部导航栏：移到 container 外部，铺满全宽并固定 -->
+    <nav class="sticky">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <span class="logo-icon">🧠</span>
+          思绪思维导图
+        </a>
+        <div class="nav-links">
+          <a href="/">首页</a>
+          <a href="/docs/">文档</a>
+        </div>
+      </div>
+    </nav>
+    <!-- 占位符：撑开高度，防止内容被 fixed 导航栏遮挡 -->
+    <div class="nav-placeholder"></div>
+    <div class="container">
+      <!-- 用于渲染 Markdown 内容的容器 -->
+      <div id="content" class="markdown-body">
+        <div class="status-box">正在加载文档...</div>
+      </div>
+    </div>
+    <script>
+      const lang = 'zh'
+    </script>
+    <script src="../assets/js/doc.js"></script>
+  </body>
+</html>

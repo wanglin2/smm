@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>思绪思维导图_文档</title>
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <nav class="sticky">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <span class="logo-icon">🧠</span>
+          思绪思维导图
+        </a>
+        <div class="nav-links">
+          <a href="/">首页</a>
+          <a href="/docs/en.html">English</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-placeholder"></div>
+    <!-- 右侧主内容区：文档列表 -->
+    <main class="main-content">
+      <h1>欢迎来到文档中心</h1>
+      <p>浏览您需要的文档内容。点击文档卡片即可开始阅读。</p>
+      <!-- 文档大类与列表将通过 JS 动态渲染 -->
+      <div id="contentArea"></div>
+    </main>
+    <script>
+      const lang = 'zh'
+    </script>
+    <script src="./zh/data.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

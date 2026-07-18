@@ -1,0 +1,84 @@
+/* 主内容区样式 */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+.main-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+.main-content > p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+/* 文档大类区块 */
+.category-section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem; /* 锚点跳转时留出顶部空间 */
+}
+.category-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+.category-section h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 24px;
+  background-color: var(--primary-color);
+  margin-right: 0.75rem;
+  border-radius: 3px;
+}
+/* 文档列表网格 */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+/* 文档卡片 */
+.doc-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: all 0.3s ease;
+}
+.doc-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+.doc-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+.doc-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+/* 响应式适配 */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+  }
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+}

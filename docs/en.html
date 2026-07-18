@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thoughts Mind Map Document</title>
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <nav class="sticky">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <span class="logo-icon">🧠</span>
+          Thoughts Mind Map
+        </a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/docs/">中文</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-placeholder"></div>
+    <!-- 右侧主内容区：文档列表 -->
+    <main class="main-content">
+      <h1>Welcome to the document center</h1>
+      <p>Read the document content you need.</Click the document card to start reading.</p>
+      <!-- 文档大类与列表将通过 JS 动态渲染 -->
+      <div id="contentArea"></div>
+    </main>
+    <script>
+      const lang = 'en'
+    </script>
+    <script src="./en/data.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
