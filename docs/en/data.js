@@ -36,6 +36,11 @@ const docsData = [
         desc: "View the image hosting help.",
       },
       {
+        path: "filenameFormat",
+        title: "Filename Format Help",
+        desc: "View the filename format help.",
+      },
+      {
         path: "ai",
         title: "AI Help",
         desc: "View the AI help.",

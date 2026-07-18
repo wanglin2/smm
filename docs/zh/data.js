@@ -36,6 +36,11 @@ const docsData = [
         desc: "查看该项目的图床配置帮助。",
       },
       {
+        path: "filenameFormat",
+        title: "文件名格式说明",
+        desc: "查看插件创建的文件名格式说明。",
+      },
+      {
         path: "ai",
         title: "AI配置帮助",
         desc: "查看该项目的AI配置帮助。",
