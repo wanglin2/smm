@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 19,
+    title: "Support entering a specific node",
+    sinceVersion: "v0.2.4",
+    description: "1. Activate a node, then click the 'Enter Specific Node' option in the context menu to enter the node. <br/>2. Currently, only single-level nodes are supported. <br/>3. Click the 'Exit' button in the top toolbar to exit the node.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.4/1.gif",
+      },
+    ]
+  },
+  {
     id: 1,
     title: "Export to Excel, Freemind, JPG, Mermaid, HTML",
     sinceVersion: "v0.2.1",

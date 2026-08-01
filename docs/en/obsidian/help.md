@@ -183,3 +183,24 @@ Support, double-click in the blank space of the canvas to create.
 This can be resolved by setting a [Bottom Margin] style for the node above.
 
 If you have set a bottom margin for multiple nodes and want to revert it, you can click the [Auto Layout] option in the canvas right-click menu.
+
+- Can Markdown and mind maps be converted back and forth without data loss?
+
+No. Partial data will be lost.
+
+- For the same Markdown content, there is no overlapping in mind map preview, but multiple root nodes appear and overlap after conversion to a mind map. Is this a bug?
+
+No. This is by design. When multiple root nodes are parsed, they are created as free nodes in edit mode. You can manually drag the root nodes of free nodes if overlapping occurs. Since dragging is unavailable in preview mode, a wrapping root node is added automatically.
+
+- Why are there no tool buttons such as Import, Export and Save in the upper-right corner of the mind map editing window?
+
+1. You may be using a third-party theme.
+2. The title bar display has been disabled in settings.
+
+- The plugin fails to launch after installation on mobile devices
+
+This is most likely caused by network issues preventing complete download of plugin files. It is recommended to delete and redownload the plugin, preferably with a stable network connection.
+
+- When using Sogou Input Method, typing after selecting partial text in a node deletes the unselected text that follows
+
+No solution available for now. It is recommended to delete the selected text with the delete key before entering new content.

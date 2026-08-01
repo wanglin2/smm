@@ -1,5 +1,25 @@
 # Official Version
 
+## 0.2.4
+
+Fixes:
+1. Fixed an issue where escape characters were lost when parsing Markdown content containing mathematical formulas with escaped %, resulting in failed formula rendering after conversion to mind maps;
+2. Fixed an issue where Obsidian internal links could not be converted when importing MD files if the option to convert mathematical formulas was unchecked;
+3. Attempted to resolve the unresponsive login button issue on iOS mobile devices;
+4. Fixed the failure of the top quick navigation function after updating Obsidian to v1.13;
+
+New Features:
+1. Line breaks in text can be recognized and retained when converting MD to mind maps and importing MD files;
+2. AI generation supports parsing and preserving line breaks as well as rendering mathematical formulas;
+3. Automatically tries the next available port if the target port is occupied during login;
+4. Added options for mind map search: Case Sensitive, Whole Word Match, Use Regular Expressions;
+5. Search functionality is now available in Outline Edit Mode;
+6. Automatically scrolls to the newly created node when inserting nodes in Outline Edit Mode;
+7. Shortcuts such as Ctrl+V, Ctrl+Enter and Ctrl+F in Outline Edit Mode support the Command key on macOS;
+
+Pro Version:
+1. Jump to a specified node is supported;
+
 ## 0.2.3
 
 Fixes:

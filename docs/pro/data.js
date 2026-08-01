@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 19,
+    title: "支持进入指定节点",
+    sinceVersion: "v0.2.4",
+    description: "1.激活某个节点，然后点击右键菜单中的【进入指定节点】，即可进入该节点。<br/>2.目前仅支持进入单层节点，无法进入某个节点后继续进入下级节点。<br/>3.进入节点后可以点击顶部工具栏中的【退出】按钮退出。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.4/1.gif",
+      },
+    ]
+  },
+  {
     id: 1,
     title: "支持导出为Excel、Freemind、JPG、Mermaid、html格式文件",
     sinceVersion: "v0.2.1",
