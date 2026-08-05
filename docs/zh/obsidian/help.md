@@ -249,3 +249,7 @@ Shift + Enter键。
 - 使用搜狗输入法，选中节点部分文字输入后会删除后面未选中的文本
 
 暂时无法解决，建议先按删除键删除选中的文本，再输入新的文本。
+
+- 使用坚果云等同步插件同步后，思维导图文件打不开，一直在loading
+
+可能是发生冲突后，坚果云插件给思维导图源文件冲突的地方添加了冲突标记，导致解析失败，可以参考该[issue](https://github.com/wanglin2/obsidian-simplemindmap/issues/160#issuecomment-5173380089)。

@@ -204,3 +204,7 @@ This is most likely caused by network issues preventing complete download of plu
 - When using Sogou Input Method, typing after selecting partial text in a node deletes the unselected text that follows
 
 No solution available for now. It is recommended to delete the selected text with the delete key before entering new content.
+
+- After using synchronization plugins such as Nut Cloud to synchronize, the mind map file cannot be opened and keeps loading
+
+Perhaps after a conflict occurred, the Nut Cloud plugin added conflict markers to the source files of the mind map, causing the parsing to fail. You can refer to this for reference[issue](https://github.com/wanglin2/obsidian-simplemindmap/issues/160#issuecomment-5173380089).
