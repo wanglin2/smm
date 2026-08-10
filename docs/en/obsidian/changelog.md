@@ -1,5 +1,28 @@
 # Official Version
 
+## 0.2.5
+
+Fixes:
+1. Attempted to fix the issue where tapping login does not respond on iOS mobile devices;
+2. Attempted to fix the abnormal display of fill‑in mode triggered by right‑click menu on iOS mobile devices;
+3. Fixed the issue where edited content was lost when exiting a node without saving after entering specified‑node editing;
+4. Fixed the issue of being unable to exit zen mode on mobile devices;
+5. Mobile adaptation: Fixed incomplete rendering of the node rich‑text floating toolbar;
+6. Fixed the issue where repository‑referenced images in Markdown failed to load when previewing Markdown as a mind map;
+7. Fixed the issue that some properties did not take effect when importing and exporting basic style configurations in the plugin sidebar;
+8. Fixed the non‑response issue when clicking confirm to add after dragging images from the file list into the node‑image addition popup;
+9. Fixed the bug allowing non‑image files to be dragged into the node‑image addition popup;
+
+New Features:
+1. Preview Markdown as mind map & Convert Markdown to mind map: Support parsing image files inserted in the ![[ ]] format;
+2. Support creating from specified templates: A single template file or template folder can be specified in settings;
+3. Plugin Sidebar ‑ Basic Styles: Support one‑click restore to default configuration;
+4. Plugin Sidebar ‑ Settings: Add one‑click restore‑to‑default configuration;
+5. Add exit button at top‑left corner after entering zen mode or fill‑in mode;
+
+Pro Version:
+1. Support OPML format import and export;
+
 ## 0.2.4
 
 Fixes:

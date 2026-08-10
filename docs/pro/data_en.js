@@ -9,6 +9,22 @@
 // ================================================================
 const features = [
   {
+    id: 20,
+    title: "Support importing and exporting OPML format",
+    sinceVersion: "v0.2.5",
+    description: "",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.5/1.png",
+      },
+      {
+        type: "image",
+        url: "./assets/images/0.2.5/2.png",
+      },
+    ]
+  },
+  {
     id: 19,
     title: "Support entering a specific node",
     sinceVersion: "v0.2.4",

@@ -9,6 +9,22 @@
 // ================================================================
 const features = [
   {
+    id: 20,
+    title: "支持导入导出OPML格式",
+    sinceVersion: "v0.2.5",
+    description: "",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.5/1.png",
+      },
+      {
+        type: "image",
+        url: "./assets/images/0.2.5/2.png",
+      },
+    ]
+  },
+  {
     id: 19,
     title: "支持进入指定节点",
     sinceVersion: "v0.2.4",
