@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 21,
+    title: "编号节点文本",
+    sinceVersion: "v0.2.5",
+    description: "可以给单个节点的文本添加编号，编号按行递增，文本修改后编号会自动更新。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.6/1.gif",
+      }
+    ]
+  },
+  {
     id: 20,
     title: "支持导入导出OPML格式",
     sinceVersion: "v0.2.5",

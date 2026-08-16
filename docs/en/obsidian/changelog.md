@@ -1,5 +1,19 @@
 # Official Version
 
+## 0.2.6
+
+Fixes:
+1. Fixed the issue where tapping login had no response on iOS mobile (added secondary redirect confirmation for iOS);
+2. Fixed abnormal display of fill‑in mode opened via right‑click menu on iOS mobile (removed underline display for iOS);
+3. Fixed the issue that the Ctrl+S shortcut failed to work and the commands 【Enter Presentation Mode】 and 【Save & Update Image】 were missing after installing the Exclidraw plugin;
+
+New Features:
+1. Plugin Settings‑Top quick navigation adapts dynamically according to the settings window width;
+2. The default shortcut for the Save & Update Preview Image command is changed to Ctrl+Shift+M;
+
+Pro Version:
+1. Added 【Number Node Text】 to the node right‑click menu;
+
 ## 0.2.5
 
 Fixes:

@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 21,
+    title: "Number Node Text",
+    sinceVersion: "v0.2.5",
+    description: "Add number to node text, number will increment row by row, and update when text is modified.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.6/1.gif",
+      }
+    ]
+  },
+  {
     id: 20,
     title: "Support importing and exporting OPML format",
     sinceVersion: "v0.2.5",
