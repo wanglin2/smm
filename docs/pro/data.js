@@ -12,7 +12,7 @@ const features = [
     id: 22,
     title: "节点标注",
     sinceVersion: "v0.2.7",
-    description: "可以给单个节点添加标注，对话框形式，可以拖拽跳转位置，可以添加文字。",
+    description: "可以给单个节点添加标注，对话框形式，可以拖拽调整位置，可以添加文字。",
     media: [
       {
         type: "image",
