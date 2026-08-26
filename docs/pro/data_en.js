@@ -9,9 +9,21 @@
 // ================================================================
 const features = [
   {
+    id: 22,
+    title: "Node Mark",
+    sinceVersion: "v0.2.7",
+    description: "Add mark to node, dialog form, can drag and drop to jump to the position, can add text.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.7/1.gif",
+      }
+    ]
+  },
+  {
     id: 21,
     title: "Number Node Text",
-    sinceVersion: "v0.2.5",
+    sinceVersion: "v0.2.6",
     description: "Add number to node text, number will increment row by row, and update when text is modified.",
     media: [
       {

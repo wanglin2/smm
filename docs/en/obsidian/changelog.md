@@ -1,5 +1,18 @@
 # Official Version
 
+## 0.2.7
+
+Fixes:
+1. Fixed the issue where node display was not updated after renaming the file linked to the node;
+
+New Features:
+1. Added a button to enter node‑text editing on the mobile top toolbar;
+2. The node rich‑text floating toolbar dynamically adapts to window size, optimizing incomplete display on small‑screen devices;
+3. The in‑activation reminder when clicking Pro‑only features supports jumping to relevant links;
+
+Pro Version:
+1. Nodes support inserting "Annotations";
+
 ## 0.2.6
 
 Fixes:

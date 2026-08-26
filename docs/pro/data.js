@@ -9,9 +9,21 @@
 // ================================================================
 const features = [
   {
+    id: 22,
+    title: "节点标注",
+    sinceVersion: "v0.2.7",
+    description: "可以给单个节点添加标注，对话框形式，可以拖拽跳转位置，可以添加文字。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.7/1.gif",
+      }
+    ]
+  },
+  {
     id: 21,
     title: "编号节点文本",
-    sinceVersion: "v0.2.5",
+    sinceVersion: "v0.2.6",
     description: "可以给单个节点的文本添加编号，编号按行递增，文本修改后编号会自动更新。",
     media: [
       {
