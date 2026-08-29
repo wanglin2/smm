@@ -55,6 +55,11 @@ const docsData = [
   {
     category: "客户端",
     docs: [
+      {
+        path: "macInstall",
+        title: "Mac系统安装提示无法打开",
+        desc: "教你如何解决Mac系统安装提示无法打开的问题。",
+      }
       // {
       //   path: "ai",
       //   title: "教你如何用这个思维导图来薅各家AI模型的羊毛",
