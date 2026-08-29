@@ -83,6 +83,9 @@
   background-color: #f3f4f6;
   font-weight: 600;
 }
+.markdown-body img {
+  width: 100%;
+}
 /* 加载与错误状态样式 */
 .status-box {
   text-align: center;
