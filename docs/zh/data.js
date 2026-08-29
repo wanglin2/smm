@@ -5,6 +5,7 @@
  * desc: 文档简介
  */
 const obPath = "obsidian/";
+const clientPath = "client/";
 const docsData = [
   {
     category: "Obsidian",
@@ -53,6 +54,35 @@ const docsData = [
   },
   {
     category: "客户端",
-    docs: [],
+    docs: [
+      {
+        path: "ai",
+        title: "教你如何用这个思维导图来薅各家AI模型的羊毛",
+        desc: "教你如何在思绪思维导图中配置常见大模型厂商的AI模型。",
+      },
+      {
+        path: "customFont",
+        title: "如何在思维导图中使用自定义字体",
+        desc: "教你如何在思维导图中使用自定义字体。",
+      },
+      {
+        path: "imageHost",
+        title: "思绪思维导图图床配置保姆级教程",
+        desc: "教你如何在思绪思维导图中配置图床。",
+      },
+      {
+        path: "manyImage",
+        title: "思维导图插入太多图片卡顿怎么办？",
+        desc: "教你如何在思维导图中插入太多图片时，避免卡顿。",
+      },
+      {
+        path: "syncSpace",
+        title: "思绪思维导图同步空间配置保姆级教程",
+        desc: "教你如何在思绪思维导图中配置同步空间。",
+      },
+    ].map((doc) => ({
+      ...doc,
+      path: clientPath + doc.path,
+    })),
   },
 ];
