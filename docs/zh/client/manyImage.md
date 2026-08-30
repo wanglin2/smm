@@ -22,7 +22,7 @@
 
 图片配置完成并启用后，后续添加的本地图片都会直接上传到云端，只存储一个url，可以显著减小文件体积。
 
-![](https://files.mdnice.com/user/19028/d128bcff-cce4-40d5-a0a0-872ccffe44a1.png)
+![](./manyImage/d128bcff-cce4-40d5-a0a0-872ccffe44a1.png)
 
 
 # 2.图片压缩配置
@@ -31,7 +31,7 @@
 
 这个方法只是延缓了文件体积膨胀的速度，但是插入的图片数量足够多，体积还是会很大。
 
-![](https://files.mdnice.com/user/19028/2833a4b3-8b8e-4e26-a4b5-783e2454d98d.png)
+![](./manyImage/2833a4b3-8b8e-4e26-a4b5-783e2454d98d.png)
 
 # 3.以附件形式插入
 
@@ -39,13 +39,13 @@
 
 当然，缺点也有很多，比如无法直接在思维导图中预览图片、跨设备分享思维导图文件需要同时传递附件。
 
-![](https://files.mdnice.com/user/19028/806cc303-49cc-4bd8-babc-7dd7386a3c9a.png)
+![](./manyImage/806cc303-49cc-4bd8-babc-7dd7386a3c9a.png)
 
 # 4.默认收起节点
 
 可以默认收起其他节点，只展开当前正在编辑或查看的节点，因为节点收起时就会从画布删除，所以可以减少卡顿的问题。
 
-![](https://files.mdnice.com/user/19028/587cf1b5-260c-446d-86b4-84d111716d56.png)
+![](./manyImage/587cf1b5-260c-446d-86b4-84d111716d56.png)
 
 
 # 5.开启图片懒加载
@@ -54,7 +54,7 @@ v0.19.0+支持设置开启图片懒加载，入口在编辑窗口-右侧【设�
 
 开启后，会只加载当前可视区域内的图片，不可见节点的图片会被删除，可以有效降低图片占用的内存，减少卡顿问题。
 
-![](https://files.mdnice.com/user/19028/1b1692fc-e139-4ee6-b2da-d4adb3a1acba.png)
+![](./manyImage/1b1692fc-e139-4ee6-b2da-d4adb3a1acba.png)
 
 另外，还有人咨询一个节点是否可以插入多张图片？
 
