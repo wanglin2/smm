@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 23,
+    title: "Rainbow Theme",
+    sinceVersion: "v0.2.8",
+    description: "Pro version can use most of the rainbow themes.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.8/1.gif",
+      }
+    ]
+  },
+  {
     id: 22,
     title: "Node Mark",
     sinceVersion: "v0.2.7",

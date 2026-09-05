@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 23,
+    title: "彩虹主题",
+    sinceVersion: "v0.2.8",
+    description: "专业版可以使用大部分的彩虹主题。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.8/1.gif",
+      }
+    ]
+  },
+  {
     id: 22,
     title: "节点标注",
     sinceVersion: "v0.2.7",
