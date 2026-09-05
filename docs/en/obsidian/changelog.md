@@ -1,5 +1,18 @@
 # Official Version
 
+## 0.2.8
+
+New Features:
+1. Added rainbow‑themed themes;
+2. Theme names in the theme list are now displayed on mouse hover; meaningless theme names are no longer shown;
+3. Full‑screen outline supports displaying node images;
+4. Added prompt when the port is occupied during login;
+5. Optimized interaction for clicking the top title of mind‑map tabs: the first click selects all title text; the second click deselects all and places the cursor at the click position;
+6. When converting Markdown to mind map or importing Markdown, free‑node creation is no longer enabled by default and becomes an optional setting;
+
+Pro Version:
+1. Partial rainbow‑themed themes;
+
 ## 0.2.7
 
 Fixes:
