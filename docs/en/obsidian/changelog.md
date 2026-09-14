@@ -1,5 +1,16 @@
 # Official Version
 
+## 0.2.9
+
+Fixes:
+1. Fixed the issue where selecting the last theme in the theme list did not show a selected style;
+2. Fixed the issue where the [[xxx]] internal links inserted in node text were lost and turned into plain text when converting to MD, exporting to MD, or copying as MD;
+3. Fixed the issue where mouse clicks on text-selection areas in all input boxes on the page did not respond when a mind-map tab was open (the normal interaction is to deselect and position the cursor between the two characters at the click location);
+
+New Features:
+1. Support inserting a sibling node above (shortcut Shift+Enter, node right-click menu);
+2. Support inserting block-level mathematical formulas: 1. Added a checkbox in the sidebar; 2. Type $$xxx$$ during text editing;
+
 ## 0.2.8
 
 New Features:
