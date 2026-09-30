@@ -9,6 +9,30 @@
 // ================================================================
 const features = [
   {
+    id: 25,
+    title: "手绘风格",
+    sinceVersion: "v0.2.10",
+    description: "支持开启手绘风格，节点连线、节点形状、节点边框等会变成手绘风格。<br/>入口：侧边栏-设置。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.10/2.gif",
+      }
+    ]
+  },
+  {
+    id: 24,
+    title: "自由节点树支持切换独立的结构",
+    sinceVersion: "v0.2.10",
+    description: "自由节点树可以切换为其他结构。<br/>入口：自由节点树的根节点右键菜单。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.10/1.gif",
+      }
+    ]
+  },
+  {
     id: 23,
     title: "彩虹主题",
     sinceVersion: "v0.2.8",

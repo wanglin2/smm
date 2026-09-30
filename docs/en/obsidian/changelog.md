@@ -1,5 +1,20 @@
 # Official Version
 
+## 0.2.10
+
+Fixes:
+1. Fixed an issue where the editor height could not fully display overly long text in a single node;
+2. Fixed missing connection lines for some layouts (outline chart, fishbone diagram) when using rainbow themes;
+3. Fixed the inability to copy and paste nodes on mobile devices;
+
+New Features:
+1. Export modal - Auto-fill the current file name in the filename field;
+2. Removed unavailable function entries on mobile: import/export configuration in basic styles/settings, and the "Export Node as Image - Download to Local" option in the node right-click menu;
+
+Pro Version:
+1. Free node trees support switching to independent layouts (Entry: right-click menu of the root node of free node trees);
+2. Support for enabling hand-drawn style (Entry: Sidebar - Settings);
+
 ## 0.2.9
 
 Fixes:

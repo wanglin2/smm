@@ -9,6 +9,32 @@
 // ================================================================
 const features = [
   {
+    id: 25,
+    title: "Hand-drawn Style",
+    sinceVersion: "v0.2.10",
+    description:
+      "Support enabling hand-drawn style, node lines, node shapes, and node borders will be hand-drawn style.<br/>Entry: Sidebar - Settings.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.10/2.gif",
+      },
+    ],
+  },
+  {
+    id: 24,
+    title: "Support switching independent structures in the free node tree",
+    sinceVersion: "v0.2.10",
+    description:
+      "Support switching independent structures in the free node tree.<br/>Entry: Right-click menu of the root node.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.10/1.gif",
+      },
+    ],
+  },
+  {
     id: 23,
     title: "Rainbow Theme",
     sinceVersion: "v0.2.8",
@@ -17,32 +43,34 @@ const features = [
       {
         type: "image",
         url: "./assets/images/0.2.8/1.gif",
-      }
-    ]
+      },
+    ],
   },
   {
     id: 22,
     title: "Node Mark",
     sinceVersion: "v0.2.7",
-    description: "Add mark to node, dialog form, can drag and drop to adjust position, can add text.",
+    description:
+      "Add mark to node, dialog form, can drag and drop to adjust position, can add text.",
     media: [
       {
         type: "image",
         url: "./assets/images/0.2.7/1.gif",
-      }
-    ]
+      },
+    ],
   },
   {
     id: 21,
     title: "Number Node Text",
     sinceVersion: "v0.2.6",
-    description: "Add number to node text, number will increment row by row, and update when text is modified.",
+    description:
+      "Add number to node text, number will increment row by row, and update when text is modified.",
     media: [
       {
         type: "image",
         url: "./assets/images/0.2.6/1.gif",
-      }
-    ]
+      },
+    ],
   },
   {
     id: 20,
@@ -58,19 +86,20 @@ const features = [
         type: "image",
         url: "./assets/images/0.2.5/2.png",
       },
-    ]
+    ],
   },
   {
     id: 19,
     title: "Support entering a specific node",
     sinceVersion: "v0.2.4",
-    description: "1. Activate a node, then click the 'Enter Specific Node' option in the context menu to enter the node. <br/>2. Currently, only single-level nodes are supported. <br/>3. Click the 'Exit' button in the top toolbar to exit the node.",
+    description:
+      "1. Activate a node, then click the 'Enter Specific Node' option in the context menu to enter the node. <br/>2. Currently, only single-level nodes are supported. <br/>3. Click the 'Exit' button in the top toolbar to exit the node.",
     media: [
       {
         type: "image",
         url: "./assets/images/0.2.4/1.gif",
       },
-    ]
+    ],
   },
   {
     id: 1,
