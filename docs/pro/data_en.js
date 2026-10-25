@@ -16,7 +16,7 @@ const features = [
     media: [
       {
         type: "image",
-        url: "./assets/images/0.2.11/3.gif",
+        url: "./assets/images/0.2.11/2.gif",
       }
     ]
   },
@@ -28,7 +28,7 @@ const features = [
     media: [
       {
         type: "image",
-        url: "./assets/images/0.2.11/2.gif",
+        url: "./assets/images/0.2.11/3.gif",
       }
     ]
   },
