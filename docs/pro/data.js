@@ -9,6 +9,42 @@
 // ================================================================
 const features = [
   {
+    id: 28,
+    title: "颜色选择器",
+    sinceVersion: "v0.2.11",
+    description: "1.颜色选择器中支持使用更多的色系：渐变色、中国传统色、马卡龙等；<br/>2.颜色选择器中支持使用吸色功能；",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/3.gif",
+      }
+    ]
+  },
+  {
+    id: 27,
+    title: "节点标签",
+    sinceVersion: "v0.2.11",
+    description: "1.节点添加弹窗中支持显示当前脑图所有标签列表，点击即可快速添加；<br/>2.节点添加弹窗中支持记录最多20个标签，非专业版为5个；",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/2.gif",
+      }
+    ]
+  },
+  {
+    id: 26,
+    title: "节点描述",
+    sinceVersion: "v0.2.11",
+    description: "节点支持添加描述，描述内容为一段文本，显示在节点文本下方，双击描述文本可以修改，描述内容左侧会有一根竖线，支持修改描述内容的样式。<br/>入口：节点右键菜单。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/1.gif",
+      }
+    ]
+  },
+  {
     id: 25,
     title: "手绘风格",
     sinceVersion: "v0.2.10",

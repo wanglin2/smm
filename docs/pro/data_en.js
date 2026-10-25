@@ -9,6 +9,42 @@
 // ================================================================
 const features = [
   {
+    id: 28,
+    title: "Color Picker",
+    sinceVersion: "v0.2.11",
+    description: "1.Support using more color schemes: gradient color, traditional Chinese color, and so on.<br/>2.Support using color picker.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/3.gif",
+      }
+    ]
+  },
+  {
+    id: 27,
+    title: "Node Tag",
+    sinceVersion: "v0.2.11",
+    description: "1.Support adding node tags in the dialog window.<br/>2.Support recording up to 20 tags.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/2.gif",
+      }
+    ]
+  },
+  {
+    id: 26,
+    title: "Node Description",
+    sinceVersion: "v0.2.11",
+    description: "Support adding node description.<br/>Entry: Right-click menu of the node.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.11/1.gif",
+      }
+    ]
+  },
+  {
     id: 25,
     title: "Hand-drawn Style",
     sinceVersion: "v0.2.10",

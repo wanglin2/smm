@@ -1,5 +1,24 @@
 # Official Version
 
+## 0.2.11
+
+Fixes:
+1. Fixed the issue where dragging nodes would throw an error when using the rainbow theme;
+2. After using the rainbow theme, a refresh button is displayed in the upper-left corner of the canvas to solve the issue where rainbow theme colors do not update after adjusting node positions;
+3. Node note editing: 1. Fixed the issue where images with spaces in the file name inserted via the toolbar image button would not display; 2. Added a hint at the bottom explaining how to insert images with spaces by manually entering the path;
+4. When converting mind map files to or exporting as Markdown files, remove all line breaks in node text to avoid affecting the md format;
+5. Optimized the issue of incomplete button text display in the "strikethrough" style settings popups throughout the app;
+6. Optimized performance;
+
+New:
+1. The color picker now supports remembering recently used colors;
+2. Node tag feature upgrade: 1. Double-clicking a node tag now displays a list of all nodes in the current mind map that contain that tag; 2. When adding a node tag, you can now specify the tag color; 3. Supports remembering recently used tags;
+
+Pro version:
+1. Nodes now support inserting descriptions (entry: node right-click menu), and the description style settings have been added to Style/Basic Style;
+2. The color picker supports color picking and provides more available color schemes;
+3. Node tags: 1. The add popup now supports displaying all tags in the current mind map; 2. Supports remembering up to 20 tags, compared with 5 for the non-Pro version;
+
 ## 0.2.10
 
 Fixes:
