@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 29,
+    title: "头脑风暴模式",
+    sinceVersion: "v0.2.13",
+    description: "头脑风暴模式想法数量无限制，非专业版同时最多可添加5个想法。",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.13/1.gif",
+      }
+    ]
+  },
+  {
     id: 28,
     title: "颜色选择器",
     sinceVersion: "v0.2.11",

@@ -9,6 +9,18 @@
 // ================================================================
 const features = [
   {
+    id: 29,
+    title: "Brainstorming Mode",
+    sinceVersion: "v0.2.13",
+    description: "The number of ideas in the brainstorming mode is unlimited, and the non version can add up to 5 ideas at the same time.",
+    media: [
+      {
+        type: "image",
+        url: "./assets/images/0.2.13/1.gif",
+      }
+    ]
+  },
+  {
     id: 28,
     title: "Color Picker",
     sinceVersion: "v0.2.11",

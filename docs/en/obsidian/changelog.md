@@ -1,5 +1,23 @@
 # Official Version
 
+## 0.2.13
+
+Fixes:
+1. Fixed the issue where math formulas were not wrapped with symbols in scenarios such as exporting to md/txt files, converting to md/whiteboard files, and outline display;
+2. Fixed the issue where an error would occur when previewing md as a mind map or embedding code blocks for editing when the mind map tab was not opened after opening ob;
+3. Fixed the issue where the mind map was not initially rendered centered when previewing md as a mind map in a popup window;
+
+New features:
+1. Added a brainstorming feature:
+    1.1. Added a brainstorming idea management tab in the right sidebar of ob, where ideas can be added and deleted, and ideas can be dragged onto an open mind map to become nodes;
+    1.2. Added a menu item in the canvas right-click menu to open the brainstorming sidebar;
+2. Conversion to md documents and conversion to mind map documents now only support conversion by creating new files; the overwrite conversion option has been removed because overwrite conversion has a probability of failure and carries higher risk;
+3. Added support for converting mind map documents to ob whiteboard documents;
+
+Professional edition:
+1. Added a rainbow theme;
+2. Unlimited addition of brainstorming ideas;
+
 ## 0.2.11
 
 Fixes:
